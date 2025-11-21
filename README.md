@@ -1,4 +1,4 @@
-# FastAPI Bot
+# API Bot
 
 A simple FastAPI bot you can deploy anywhere or upload directly to GitHub.
 
