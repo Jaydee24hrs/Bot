@@ -1,23 +1,30 @@
-# API Bot
+# FastAPI Bot — Full Project
 
-A simple FastAPI bot you can deploy anywhere or upload directly to GitHub.
+This is a more fully-featured FastAPI "bot" project ready to push to GitHub.
 
-## 🚀 Features
-- `/` health check
-- `/bot` POST endpoint to reply to messages
+## Features
+- JWT authentication (signup / login)
+- User model (SQLModel + SQLite/Postgres compatible)
+- `/bot` endpoint with simple bot logic and webhook-style handler
+- Background tasks support
+- Dockerfile + docker-compose (Postgres + Redis)
+- Unit tests (pytest)
+- GitHub Actions CI for tests
+- Config via environment variables
+- Logging and structured project layout
 
-## 📦 Install
+## Quickstart (dev)
 ```bash
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
+uvicorn app.main:app --reload
 ```
 
-## ▶️ Run
+For production with Docker Compose:
 ```bash
-uvicorn main:app --reload
+docker compose up --build
 ```
 
-## 🐳 Docker
-```bash
-docker build -t fastapi-bot .
-docker run -p 8000:8000 fastapi-bot
-```
+## Files
+See `app/` for the application code. Tests are in `tests/`.
